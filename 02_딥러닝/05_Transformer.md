@@ -93,12 +93,6 @@ class Block(nn.Module):
 ```
 👉 추천 실습: Andrej Karpathy의 "Let's build GPT" / nanoGPT 따라 하기
 
-## ✅ 체크리스트
-- [ ] Q, K, V의 의미와 어텐션 수식을 설명할 수 있다
-- [ ] √d_k 스케일링, causal mask의 이유를 안다
-- [ ] BERT와 GPT의 구조·학습 목표 차이를 안다
-- [ ] 작은 GPT를 직접 구현해 텍스트를 생성해 봤다
-
 ---
 
 ## 🧪 실습
