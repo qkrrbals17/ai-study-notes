@@ -71,3 +71,22 @@ class TextClassifier(nn.Module):
 - [ ] LSTM의 3개 게이트 역할을 설명할 수 있다
 - [ ] Seq2Seq의 병목과 어텐션의 해결 방식을 안다
 - [ ] RNN 대비 Transformer의 장점을 말할 수 있다
+
+---
+
+## 🧪 실습
+
+**코드** · [`dl04_rnn_lstm_numpy.py`](code/dl04_rnn_lstm_numpy.py)  
+**실행 로그** · [`dl04_rnn_lstm_numpy.txt`](code/outputs/dl04_rnn_lstm_numpy.txt)
+
+<p>
+  <img src="code/figures/dl04_char_rnn_loss.png" width="48%">
+  <img src="code/figures/dl04_vanishing_gradient.png" width="48%">
+</p>
+
+### 📝 실습 후 정리
+
+- vanilla RNN의 기울기는 30스텝 전 5.6e-06, 59스텝 전 4.6e-12로 소멸.
+- LSTM 셀 경로(forget bias 3)는 59스텝 전에도 3.5e-02 유지.
+- BPTT를 직접 구현한 문자 RNN: 손실 3.71 → 0.003. 500회 만에 문장을 생성하지만 텍스트가 작아 사실상 암기(과적합).
+- BPTT 기울기에 clipping(±5)을 넣어 기울기 폭발을 막음 → RNN 학습의 기본 장치.
