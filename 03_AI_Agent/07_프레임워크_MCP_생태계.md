@@ -71,3 +71,15 @@ if __name__ == "__main__":
 - [ ] 프레임워크 없이 먼저 구현해야 하는 이유를 안다
 - [ ] LangGraph의 상태 그래프 개념을 이해했다
 - [ ] MCP의 Tools/Resources/Prompts를 설명하고 간단한 서버를 만들어 봤다
+
+---
+
+## 🧪 실습
+
+**코드** · [`ag07_mcp_server_study_notes.py`](code/ag07_mcp_server_study_notes.py)  
+
+### 📝 실습 후 정리
+
+- 공부 노트용 MCP 서버를 설계: Tools(list/search/read), Resource(notes://), Prompt(quiz_me).
+- 경로 탈출(../../) 방지, 긴 노트는 start_line으로 나눠 읽기 등 '에이전트가 실수하기 어려운' 도구 설계를 적용.
+- 한 번 MCP 서버로 만들면 여러 AI 앱/IDE에서 같은 도구를 재사용할 수 있음.
