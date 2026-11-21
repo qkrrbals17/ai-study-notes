@@ -98,3 +98,20 @@ class Block(nn.Module):
 - [ ] √d_k 스케일링, causal mask의 이유를 안다
 - [ ] BERT와 GPT의 구조·학습 목표 차이를 안다
 - [ ] 작은 GPT를 직접 구현해 텍스트를 생성해 봤다
+
+---
+
+## 🧪 실습
+
+**코드** · [`dl05_attention_numpy.py`](code/dl05_attention_numpy.py) · [`dl05_mini_gpt_torch.py`](code/dl05_mini_gpt_torch.py)  
+**실행 로그** · [`dl05_attention_numpy.txt`](code/outputs/dl05_attention_numpy.txt)
+
+<p>
+  <img src="code/figures/dl05_attention.png" width="70%">
+</p>
+
+### 📝 실습 후 정리
+
+- √d_k 스케일링이 없으면 d_k=512에서 softmax 최대 가중치가 0.915(포화), 있으면 0.05 → 기울기 소실 방지 이유를 확인.
+- 입력 순서를 섞으면 출력도 똑같이 섞일 뿐(permutation equivariance=True) → 위치 인코딩이 꼭 필요.
+- RoPE는 위치 (3,1)과 (10,8)의 q·k가 같음 → 상대 위치만 반영. 128K 토큰이면 어텐션 행렬 하나가 fp16 32.8GB → FlashAttention 등이 필요한 이유.
