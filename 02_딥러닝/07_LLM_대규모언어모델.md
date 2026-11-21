@@ -83,13 +83,6 @@ model.print_trainable_parameters()
 - 도구: Hugging Face transformers / datasets / peft / trl, vLLM, llama.cpp, Ollama
 - 모델 순위·버전은 매우 빠르게 바뀌므로 **최신 정보는 항상 따로 확인**
 
-## ✅ 체크리스트
-- [ ] 사전학습 → SFT → 정렬(RLHF/DPO) 단계를 설명할 수 있다
-- [ ] Temperature와 Top-p가 출력에 주는 영향을 안다
-- [ ] LoRA의 원리(저랭크 분해)를 설명할 수 있다
-- [ ] 환각의 원인과 완화책을 말할 수 있다
-- [ ] 이 내용이 03_AI_Agent의 기반이 됨을 이해했다
-
 ---
 
 ## 🧪 실습
