@@ -15,15 +15,15 @@
 
 | 단계 | 주제 | 실습 하이라이트 |
 |---|---|---|
-| [01 머신러닝](01_머신러닝/README.md) | 편향-분산, 전처리와 데이터 누수, 회귀·분류, 앙상블, 비지도 학습, 모델 평가, 실전 워크플로우 | 경사하강법 직접 구현, 데이터 누수 재현 실험, ROC/PR·확률 보정 곡선, 교차검증 기반 모델 비교 |
-| [02 딥러닝](02_딥러닝/README.md) | 신경망, 최적화·정규화, CNN, RNN, Transformer, 생성 모델, LLM, PyTorch 실전 | NumPy로 MLP 역전파·합성곱·LSTM·Attention 구현, Mini-GPT, Autoencoder·Diffusion, LoRA 미세조정 |
+| [01 머신러닝](01_머신러닝/README.md) | 편향-분산, 전처리와 데이터 누수, 회귀·분류, 앙상블, 비지도 학습, 모델 평가, 실전 워크플로우 | 경사하강법 직접 구현, 데이터 누수 재현 실험, ROC/PR·확률 보정 곡선, 교차검증 기반 모델 비교 |
+| [02 딥러닝](02_딥러닝/README.md) | 신경망, 최적화·정규화, CNN, RNN, Transformer, 생성 모델, LLM, PyTorch 실전 | NumPy로 MLP 역전파·합성곱·LSTM·Attention 구현, Mini-GPT, Autoencoder·Diffusion, LoRA 미세조정 |
 | [03 AI Agent](03_AI_Agent/README.md) | 에이전트 구조, 프롬프트, Tool calling, RAG, 메모리·계획, 멀티에이전트, MCP, 평가·안전 | 프레임워크 없이 에이전트 루프 구현, 도구 레지스트리, RAG 파이프라인, ReAct, 평가 하네스, MCP 서버 |
 
 ## Selected Figures
 
 | Bias–Variance | Attention Weights |
 |---|---|
-| <img src="01_머신러닝/code/figures/ml01_poly_fits.png" width="400"> | <img src="02_딥러닝/code/figures/dl05_attention.png" width="400"> |
+| <img src="01_머신러닝/code/figures/ml01_poly_fits.png" width="400"> | <img src="02_딥러닝/code/figures/dl05_attention.png" width="400"> |
 
 ## Structure
 
