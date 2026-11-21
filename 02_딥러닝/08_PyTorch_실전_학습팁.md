@@ -80,3 +80,15 @@ def seed_all(s=42):
 - [ ] 학습 루프를 보지 않고 작성할 수 있다
 - [ ] "한 배치 과적합" 테스트를 해 봤다
 - [ ] 혼합정밀도와 gradient accumulation을 적용해 봤다
+
+---
+
+## 🧪 실습
+
+**코드** · [`dl08_pytorch_training_template.py`](code/dl08_pytorch_training_template.py)  
+
+### 📝 실습 후 정리
+
+- 시드·AMP·clipping·accumulation·warmup+cosine·early stopping·체크포인트를 한 템플릿에 모아 프로젝트마다 재사용.
+- --overfit_one_batch 모드로 손실이 0 근처로 가는지 먼저 확인하는 습관 → 버그를 가장 빨리 찾는 방법.
+- weight decay를 bias·정규화 파라미터에서 제외하는 파라미터 그룹 설정까지 포함.
