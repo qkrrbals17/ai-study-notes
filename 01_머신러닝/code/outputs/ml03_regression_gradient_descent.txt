@@ -1,0 +1,16 @@
+방법          | 절편    | 첫 3개 계수                 | test RMSE
+정규방정식        |  153.74 | [  1.75 -11.51  25.61]      | 53.85
+경사하강법        |  153.74 | [  1.75 -11.51  25.61]      | 53.85
+미니배치SGD      |  152.30 | [  4.08 -10.24  26.93]      | 53.96
+sklearn      |  153.74 | [  1.75 -11.51  25.61]      | 53.85
+최대 계수 차이 (정규방정식 vs GD): 0.0
+
+[평가지표] MAE=42.79  RMSE=53.85  R2=0.453
+[그림 저장] figures/ml03_gd_curves.png
+[그림 저장] figures/ml03_regularization_path.png
+
+Lasso(alpha=1) 에서 0이 된 특성: ['s2']
+Ridge alpha=0.1   test RMSE=53.84
+Ridge alpha=1     test RMSE=53.78
+Ridge alpha=10    test RMSE=53.63
+Ridge alpha=100   test RMSE=53.46

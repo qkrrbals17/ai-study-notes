@@ -1,0 +1,13 @@
+degree= 1  train MSE=0.1931  test MSE=0.2471
+degree= 3  train MSE=0.0461  test MSE=0.0679
+degree=15  train MSE=0.0309  test MSE=0.0900
+→ test MSE가 가장 낮은 차수: 3
+[그림 저장] figures/ml01_poly_fits.png
+[그림 저장] figures/ml01_complexity_curve.png
+
+차수 | bias^2  | variance | bias^2+var
+   1 | 0.1533  |   0.0182 | 0.1716
+   3 | 0.0033  |   0.0087 | 0.0121
+   9 | 0.0067  |   0.4132 | 0.4199
+  15 | 0.0150  |  42.0879 | 42.1028
+→ 차수↑ : 편향↓ 분산↑  (트레이드오프 확인)

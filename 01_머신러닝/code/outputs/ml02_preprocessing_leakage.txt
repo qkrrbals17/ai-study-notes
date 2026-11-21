@@ -1,0 +1,34 @@
+== 데이터 요약 ==
+    age       income  visits region   plan  churn
+0  62.0          NaN     5.0     서울    pro      0
+1  51.0  2984.916229     3.0     부산    pro      1
+2  44.0  1855.061474     4.0     서울    pro      0
+3  32.0          NaN     6.0     대구  basic      0
+4  34.0  3396.642808     4.0     대구  basic      0
+
+결측치 수:
+ age        96
+income    109
+visits      0
+region     51
+plan        0
+churn       0
+
+타깃 비율: {1: 0.524, 0: 0.476}
+
+[파이프라인] ROC-AUC = 0.686 ± 0.030
+
+로지스틱 회귀 계수 (스케일된 특성 기준):
+ cat__plan_pro       -0.480
+cat__plan_basic     -0.382
+cat__region_부산      -0.047
+num__income          0.018
+cat__region_광주       0.022
+cat__region_서울       0.064
+cat__region_대구       0.252
+num__visits          0.432
+num__age             0.508
+cat__plan_premium    1.152
+
+[누수 실험 - 랜덤 데이터]  잘못된 CV 정확도 = 0.880   올바른 CV 정확도 = 0.440
+→ 랜덤 데이터인데 잘못된 방법은 높은 점수가 나옴 = 데이터 누수!

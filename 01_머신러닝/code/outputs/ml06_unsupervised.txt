@@ -1,0 +1,16 @@
+[직접 구현 K-Means] 4회 반복 후 수렴, inertia=1205.2
+[sklearn KMeans]   inertia=1205.2,  두 결과 일치도(ARI)=1.000
+K별 실루엣: {2: 0.636, 3: 0.608, 4: 0.728, 5: 0.624, 6: 0.521, 7: 0.432, 8: 0.325, 9: 0.335} → 최적 K = 4
+[그림 저장] figures/ml06_kmeans_elbow.png
+
+[초승달 데이터 군집 성능 ARI (1이면 완벽)]
+K-Means               : ARI=0.472
+Agglomerative(single) : ARI=1.000
+GMM                   : ARI=0.506
+DBSCAN(eps=0.3)       : ARI=1.000
+[그림 저장] figures/ml06_moons_clustering.png
+
+[PCA] 64차원 중 분산 90% 설명에 필요한 주성분 수: 31개, 95%: 40개
+[그림 저장] figures/ml06_pca_tsne.png
+
+[IsolationForest] 이상치로 판정: 16개 (실제 주입한 이상치 15개)

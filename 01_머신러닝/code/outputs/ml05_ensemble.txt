@@ -1,0 +1,21 @@
+(lightgbm 미설치 → HistGradientBoosting으로 대체 비교)
+(xgboost 미설치 → 건너뜀)
+
+모델                   | train acc | test acc | 시간
+DecisionTree         | 1.0000    | 0.7810   | 0.04s
+Bagging(트리100)       | 1.0000    | 0.8850   | 2.65s
+RandomForest         | 1.0000    | 0.8760   | 1.23s
+AdaBoost             | 0.7257    | 0.7100   | 1.18s
+GradientBoosting     | 0.9297    | 0.8450   | 3.83s
+HistGB(LightGBM식)    | 0.9730    | 0.8720   | 0.24s
+
+RandomForest OOB 점수 = 0.8797 (별도 검증셋 없이 추정한 성능)
+→ 단일 트리는 train=1.0(과적합), 앙상블은 test 성능이 크게 오름
+[그림 저장] figures/ml05_ensemble.png
+
+[보팅/스태킹 5-Fold CV accuracy]
+LogReg 단독   : 0.5860
+RF 단독       : 0.8755
+HGB 단독      : 0.8775
+Soft Voting : 0.8710
+Stacking    : 0.8843

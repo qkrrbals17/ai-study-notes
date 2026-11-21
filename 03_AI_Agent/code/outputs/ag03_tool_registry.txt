@@ -1,0 +1,48 @@
+===== 자동 생성된 도구 스키마 (LLM에 그대로 전달) =====
+{
+  "name": "convert_grade",
+  "description": "점수(0~100)를 학점으로 변환한다.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "score": {
+        "type": "integer",
+        "description": "0~100 정수 점수"
+      },
+      "scale": {
+        "type": "string",
+        "enum": [
+          "letter",
+          "gpa"
+        ],
+        "description": "letter(A~F) 또는 gpa(4.5 만점)"
+      }
+    },
+    "required": [
+      "score"
+    ]
+  }
+}
+
+===== 실행 테스트 =====
+search_student({'email': 'kim@uni.ac.kr'})
+   → {"name": "김OO", "score": 87}
+search_student({'email': '김OO'})
+   → 오류: email 형식이 아닙니다. 'id@uni.ac.kr' 형태의 전체 주소를 넣으세요.
+convert_grade({'score': 92, 'scale': 'gpa'})
+   → 4.5
+convert_grade({'score': '92점'})
+   → 인자 오류: 'score'는 정수여야 합니다 (받은 값: '92점')
+convert_grade({'score': 92, 'scale': 'percent'})
+   → 인자 오류: 'scale'는 ['letter', 'gpa'] 중 하나여야 합니다 (받은 값: percent)
+search_students({'email': 'x'})
+   → 오류: 'search_students' 도구는 없습니다. 사용 가능: ['search_student', 'convert_grade', 'slow_api', 'send_email']
+slow_api({'query': 'x'})
+   → 오류: 0.5초 타임아웃. 잠시 후 재시도하거나 다른 방법을 사용하세요.
+send_email({'to': 'prof@uni.ac.kr', 'subject': '성적', 'body': '...'})
+   → ⛔ 사용자 승인이 없어 실행하지 않았습니다. 사용자에게 내용을 보여주고 확인을 받으세요.
+   (사용자에게 확인 요청: send_email prof@uni.ac.kr) → 승인
+
+[승인 후 실행] 📧 prof@uni.ac.kr 에게 '성적' 전송 완료
+
+[병렬 도구 호출] 순차 0.90s vs 병렬 0.30s  결과 동일: True

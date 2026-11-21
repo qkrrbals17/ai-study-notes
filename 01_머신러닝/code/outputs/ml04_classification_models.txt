@@ -1,0 +1,30 @@
+데이터: (569, 30), 양성(1) 비율=0.63
+
+모델                   | acc    | f1     | roc_auc | 학습시간
+LogisticRegression   | 0.9789 | 0.9834 | 0.9955  | 0.04s
+SVM (RBF)            | 0.9771 | 0.9819 | 0.9957  | 0.04s
+KNN (k=5)            | 0.9649 | 0.9727 | 0.9806  | 0.03s
+DecisionTree (d=4)   | 0.9262 | 0.9419 | 0.9207  | 0.03s
+GaussianNB           | 0.9385 | 0.9522 | 0.9885  | 0.02s
+
+[스케일링 효과]
+KNN: 스케일링 X = 0.9315  →  스케일링 O = 0.9649
+SVM: 스케일링 X = 0.9210  →  스케일링 O = 0.9771
+[그림 저장] figures/ml04_decision_boundaries.png
+[그림 저장] figures/ml04_svm_C_gamma.png
+
+[지니 불순도] 루트=0.4675, 분할 후 가중 평균=0.1423, 정보이득=0.3252
+sklearn이 계산한 루트 불순도: 0.4675
+
+깊이 2 결정트리 규칙:
+|--- worst radius <= 16.80
+|   |--- worst concave points <= 0.14
+|   |   |--- class: 1
+|   |--- worst concave points >  0.14
+|   |   |--- class: 0
+|--- worst radius >  16.80
+|   |--- worst texture <= 19.91
+|   |   |--- class: 1
+|   |--- worst texture >  19.91
+|   |   |--- class: 0
+

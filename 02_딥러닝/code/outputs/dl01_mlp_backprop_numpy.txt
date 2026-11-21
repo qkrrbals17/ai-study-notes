@@ -1,0 +1,8 @@
+[Gradient check] 최대 상대오차 = 2.85e-08  (1e-6 이하면 역전파 구현이 맞음)
+[학습 결과] ReLU MLP 정확도 = 0.982,  활성화 없는(선형) 망 정확도 = 0.887
+초기 손실 = 0.834 (이론값 ln2 = 0.693 근처면 정상),  최종 손실 = 0.058
+[그림 저장] figures/dl01_mlp_numpy.png
+hidden=  2 → train acc=0.895
+hidden=  4 → train acc=0.977
+hidden= 16 → train acc=0.978
+hidden= 64 → train acc=0.982

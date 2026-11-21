@@ -1,0 +1,7 @@
+[오토인코더] 잠재 2차원 재구성 MSE = 0.0360
+[PCA 2차원 ] 재구성 MSE        = 0.0534  (선형 vs 비선형 압축 비교)
+[그림 저장] figures/dl06_autoencoder.png
+
+[Diffusion] 노이즈 예측 학습 최종 손실 = 0.1544 (예측 안 하면 1.0)
+[그림 저장] figures/dl06_diffusion.png
+[Diffusion] 생성 샘플→실제 데이터 최근접 평균거리 = 0.035  (순수 가우시안 노이즈는 0.248)

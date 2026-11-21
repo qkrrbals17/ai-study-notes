@@ -1,0 +1,31 @@
+양성 비율: 3.460%
+[모두 음성이라고 예측하는 바보 모델] accuracy=0.9653, F1=0.0000  ← 정확도만 보면 속는다
+
+[임계값 0.5] 혼동 행렬 [[TN FP] [FN TP]]:
+ [[5788    4]
+ [  76  132]]
+              precision    recall  f1-score   support
+
+           0      0.987     0.999     0.993      5792
+           1      0.971     0.635     0.767       208
+
+    accuracy                          0.987      6000
+   macro avg      0.979     0.817     0.880      6000
+weighted avg      0.986     0.987     0.985      6000
+
+ROC-AUC=0.9181   PR-AUC(AP)=0.8184  (기준선 PR-AUC = 양성비율 0.035)
+
+F1 최대 임계값 = 0.201 → precision=0.942, recall=0.707, F1=0.808
+재현율 90% 이상 보장 임계값 = 0.002 → precision=0.080  (놓치면 안 되는 문제에 사용)
+[그림 저장] figures/ml07_roc_pr_threshold.png
+LogReg class_weight=None     → recall=0.476, F1=0.637
+LogReg class_weight=balanced → recall=0.817, F1=0.275
+
+[CV 분할 비교] 12개 샘플, 양성 4개
+KFold(셔플X)      : ['val=[0, 1, 2, 3] 양성0개', 'val=[4, 5, 6, 7] 양성0개', 'val=[8, 9, 10, 11] 양성4개']
+StratifiedKFold : ['val=[0, 1, 2, 8] 양성1개', 'val=[3, 4, 5, 9] 양성1개', 'val=[6, 7, 10, 11] 양성2개']
+TimeSeriesSplit : ['val=[3, 4, 5] 양성0개', 'val=[6, 7, 8] 양성1개', 'val=[9, 10, 11] 양성3개']
+
+GridSearch  (18조합): best AP=0.7223  {'l2_regularization': 0, 'learning_rate': 0.3, 'max_leaf_nodes': 63}
+RandomSearch(18회)  : best AP=0.7275  {'l2_regularization': 0.081, 'learning_rate': 0.24, 'max_leaf_nodes': 54, 'min_samples_leaf': 93}
+[그림 저장] figures/ml07_learning_calibration.png

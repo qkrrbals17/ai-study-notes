@@ -1,0 +1,39 @@
+train=353, test=89, 고위험 비율=0.30
+
+[EDA] 타깃과의 상관계수 상위:
+ s5     0.514
+bmi    0.489
+bp     0.403
+s4     0.362
+s6     0.320
+
+[모델 비교: 5-Fold ROC-AUC]
+  Dummy(베이스라인)         0.5000 ± 0.0000
+  LogisticRegression   0.8624 ± 0.0609
+  RandomForest         0.8410 ± 0.0563
+  HistGB               0.8299 ± 0.0612
+
+[튜닝] best CV AUC=0.8675, params={'clf__C': 67.3225, 'clf__l1_ratio': 0.5}
+
+[오류 분석] 틀린 샘플 vs 맞춘 샘플의 평균 bmi / s5:
+          bmi     s5  proba
+wrong                      
+False  25.879  4.608  0.271
+True   27.655  4.896  0.408
+
+[최종 테스트] ROC-AUC = 0.8381
+              precision    recall  f1-score   support
+
+           0      0.836     0.903     0.868        62
+           1      0.727     0.593     0.653        27
+
+    accuracy                          0.809        89
+   macro avg      0.782     0.748     0.761        89
+weighted avg      0.803     0.809     0.803        89
+
+해석 - 영향이 큰 특성: {'s1': -2.024, 's5': 1.945, 's2': 1.49, 'bmi': 0.829, 'bp': 0.551}
+
+[예측 API 테스트] 입력: {'age': 62.0, 'sex': 2.0, 'bmi': 37.8, 'bp': 119.0} ...
+출력: {'high_risk_probability': 0.968, 'label': '고위험'} | 실제: 고위험
+
+저장된 파일: ['diabetes_risk_model.joblib', 'experiment_log.json']

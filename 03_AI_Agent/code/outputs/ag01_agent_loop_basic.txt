@@ -1,0 +1,25 @@
+
+🎯 목표: 서울 날씨 알려줘
+  🔧 step 1: get_weather({'city': '서울'}) → {"city": "서울", "sky": "맑음", "temp_c": 3}
+  ✅ step 2: 종료 → [최종 답변] 수집한 정보: get_weather{"city": "서울"} → {"city": "서울", "sky": "맑음", "temp_c": 3}
+
+🎯 목표: 서울이랑 제주 날씨 차이가 몇 도야?
+  🔧 step 1: get_weather({'city': '서울'}) → {"city": "서울", "sky": "맑음", "temp_c": 3}
+  🔧 step 2: get_weather({'city': '제주'}) → {"city": "제주", "sky": "비", "temp_c": 12}
+  🔧 step 3: calculator({'expression': '12 - 3'}) → 9
+  ✅ step 4: 종료 → [최종 답변] 수집한 정보: get_weather{"city": "서울"} → {"city": "서울", "sky": "맑음", "temp_c": 3}; get_weather{"city": "제주"} → {"city": "제주", "sky": "비", "temp_c": 12}; calculator{"expression": "12 - 3"} → 9
+
+🎯 목표: 오늘 날짜랑 부산 날씨
+  🔧 step 1: get_weather({'city': '부산'}) → {"city": "부산", "sky": "흐림", "temp_c": 9}
+  🔧 step 2: today({}) → 2026-11-22
+  ✅ step 3: 종료 → [최종 답변] 수집한 정보: get_weather{"city": "부산"} → {"city": "부산", "sky": "흐림", "temp_c": 9}; today{} → 2026-11-22
+
+🎯 목표: 광주 날씨 알려줘
+  🔧 step 1: get_weather({'city': '광주'}) → 오류: '광주'의 날씨 정보가 없습니다. 가능한 도시: ['서울', '부산', '제주']
+  ✅ step 2: 종료 → [최종 답변] 수집한 정보: get_weather{"city": "광주"} → 오류: '광주'의 날씨 정보가 없습니다. 가능한 도시: ['서울', '부산', '제주']
+
+🎯 목표: 계속 같은 행동만 반복하는 모델
+  🔧 step 1: today({}) → 2026-11-22
+  🔧 step 2: today({}) → 2026-11-22
+  🔧 step 3: today({}) → 2026-11-22
+  ⛔ 최대 단계 도달 (무한 루프 방지)
