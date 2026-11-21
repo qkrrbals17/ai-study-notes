@@ -71,3 +71,20 @@ m.fc = nn.Linear(m.fc.in_features, num_classes)    # 새 분류기
 - [ ] 잔차 연결이 깊은 망 학습을 가능하게 하는 이유를 안다
 - [ ] 사전학습 모델로 전이학습 코드를 작성할 수 있다
 - [ ] 분류/탐지/분할의 차이를 안다
+
+---
+
+## 🧪 실습
+
+**코드** · [`dl03_cnn_transfer_learning_torch.py`](code/dl03_cnn_transfer_learning_torch.py) · [`dl03_convolution_numpy.py`](code/dl03_convolution_numpy.py)  
+**실행 로그** · [`dl03_convolution_numpy.txt`](code/outputs/dl03_convolution_numpy.txt)
+
+<p>
+  <img src="code/figures/dl03_filters.png" width="70%">
+</p>
+
+### 📝 실습 후 정리
+
+- conv 출력 크기 공식 (N+2P−K)/S+1을 4가지 설정에서 직접 구현 결과와 대조해 모두 일치.
+- 224×224×3 입력에 FC층은 1.5억 개, 3×3 conv 64채널은 1,792개 파라미터 → 가중치 공유의 위력.
+- 이미지를 1픽셀 옮기면 원본 픽셀 분류기는 0.961→0.463으로 붕괴, conv+ReLU+pool 특징은 0.674로 덜 떨어짐 → 풀링의 위치 불변성.
