@@ -89,3 +89,20 @@ model.print_trainable_parameters()
 - [ ] LoRA의 원리(저랭크 분해)를 설명할 수 있다
 - [ ] 환각의 원인과 완화책을 말할 수 있다
 - [ ] 이 내용이 03_AI_Agent의 기반이 됨을 이해했다
+
+---
+
+## 🧪 실습
+
+**코드** · [`dl07_llm_core_numpy.py`](code/dl07_llm_core_numpy.py) · [`dl07_lora_finetune_hf.py`](code/dl07_lora_finetune_hf.py)  
+**실행 로그** · [`dl07_llm_core_numpy.txt`](code/outputs/dl07_llm_core_numpy.txt)
+
+<p>
+  <img src="code/figures/dl07_decoding.png" width="70%">
+</p>
+
+### 📝 실습 후 정리
+
+- BPE를 직접 학습시키니 처음 보는 단어(slowest, 강화러닝)도 아는 조각으로 분해 → OOV 문제 해결 원리.
+- Temperature 0.2→1.5에서 엔트로피 0.50→1.73. Top-p 0.8은 상위 3개 단어만 후보로 남김.
+- LoRA(r=4)는 전체의 3.1% 파라미터로 목표 변화를 완벽히 학습. INT4 양자화 오차 19%가 그룹별 스케일로 10.7%로 감소, GQA로 KV 캐시 17.2→4.3GB.
