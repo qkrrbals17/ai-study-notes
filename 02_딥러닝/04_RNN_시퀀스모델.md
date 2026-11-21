@@ -66,12 +66,6 @@ class TextClassifier(nn.Module):
         return self.fc(h)
 ```
 
-## ✅ 체크리스트
-- [ ] RNN이 기울기 소실을 겪는 이유를 안다
-- [ ] LSTM의 3개 게이트 역할을 설명할 수 있다
-- [ ] Seq2Seq의 병목과 어텐션의 해결 방식을 안다
-- [ ] RNN 대비 Transformer의 장점을 말할 수 있다
-
 ---
 
 ## 🧪 실습
