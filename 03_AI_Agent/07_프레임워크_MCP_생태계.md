@@ -67,11 +67,6 @@ if __name__ == "__main__":
 - 평가: 각 플랫폼 eval 기능, promptfoo, RAGAS
 - 서빙/로컬 모델: vLLM, Ollama, llama.cpp
 
-## ✅ 체크리스트
-- [ ] 프레임워크 없이 먼저 구현해야 하는 이유를 안다
-- [ ] LangGraph의 상태 그래프 개념을 이해했다
-- [ ] MCP의 Tools/Resources/Prompts를 설명하고 간단한 서버를 만들어 봤다
-
 ---
 
 ## 🧪 실습
