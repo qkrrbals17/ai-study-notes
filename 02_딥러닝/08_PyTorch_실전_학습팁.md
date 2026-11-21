@@ -76,11 +76,6 @@ def seed_all(s=42):
 1. MNIST MLP → 2. CIFAR-10 CNN(+전이학습) → 3. 감성분석 LSTM
 → 4. nanoGPT 직접 구현 → 5. 오픈 LLM LoRA 파인튜닝 → 6. 간단한 Diffusion 학습
 
-## ✅ 체크리스트
-- [ ] 학습 루프를 보지 않고 작성할 수 있다
-- [ ] "한 배치 과적합" 테스트를 해 봤다
-- [ ] 혼합정밀도와 gradient accumulation을 적용해 봤다
-
 ---
 
 ## 🧪 실습
